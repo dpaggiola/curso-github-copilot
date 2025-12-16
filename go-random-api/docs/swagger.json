@@ -1,0 +1,81 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample server for random data.",
+        "title": "Random API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "paths": {
+        "/random/number": {
+            "get": {
+                "description": "Get a random number between 0 and 1000",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "random"
+                ],
+                "summary": "Get a random number",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/main.Response"
+                        }
+                    }
+                }
+            }
+        },
+        "/random/string": {
+            "get": {
+                "description": "Get a random string of 10 bytes (hex encoded)",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "random"
+                ],
+                "summary": "Get a random string",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/main.Response"
+                        }
+                    }
+                }
+            }
+        },
+        "/random/uuid": {
+            "get": {
+                "description": "Get a random UUID",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "random"
+                ],
+                "summary": "Get a random UUID",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/main.Response"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "main.Response": {
+            "type": "object",
+            "properties": {
+                "result": {}
+            }
+        }
+    }
+}

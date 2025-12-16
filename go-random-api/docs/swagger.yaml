@@ -1,0 +1,53 @@
+basePath: /
+definitions:
+  main.Response:
+    properties:
+      result: {}
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a sample server for random data.
+  title: Random API
+  version: "1.0"
+paths:
+  /random/number:
+    get:
+      description: Get a random number between 0 and 1000
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Response'
+      summary: Get a random number
+      tags:
+      - random
+  /random/string:
+    get:
+      description: Get a random string of 10 bytes (hex encoded)
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Response'
+      summary: Get a random string
+      tags:
+      - random
+  /random/uuid:
+    get:
+      description: Get a random UUID
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Response'
+      summary: Get a random UUID
+      tags:
+      - random
+swagger: "2.0"
